@@ -7,7 +7,7 @@ var number = text.split`@`[1]
 var number = text
 }
 
-if(!text && !m.quoted) return conn.reply(m.chat, `*[❗] الاستخدام المناسب*\n\n*┯┷*\n*┠≽ ${usedPrefix}ترقيه مشرف  @منشن*\n*┠≽ ${usedPrefix}ترقيه مشرف  -> الرد على رسالة*\n*┷┯*`, m)
+if(!text && !m.quoted) return conn.reply(m.chat, `*[❗] الاستخدام المناسب*\n\n*┯┷*\n*┠≽ ${usedPrefix}رفع مشرف  @منشن*\n*┠≽ ${usedPrefix}رفع مشرف  -> الرد على رسالة*\n*┷┯*`, m)
 if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*[ ⚠️ ] الرقم الذي تم إدخاله غير صحيح ، الرجاء إدخال الرقم الصحيح*`, m)
 
 try {
@@ -21,13 +21,13 @@ var user = number + '@s.whatsapp.net'
 } catch (e) {
 } finally {
 conn.groupParticipantsUpdate(m.chat, [user], 'promote')
-conn.reply(m.chat, `*تم الرفع الي مشرف ⚠️*`, m)
+conn.reply(m.chat, ``, m)
 }}
-handler.help = ['*201063720595xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v)
+handler.help = ['*201210307869xxx*','*@اسم المستخدم*','*محادثة المستجيب*'].map(v => 'promote ' + v)
 handler.tags = ['group']
-handler.command = /^(ترقيه|ترقية)$/i
+handler.command = /^(رفع)$/i
 handler.group = true
-handler.admin = true
-handler.owner = false
+handler.rowner = true
+handler.botAdmin = true
 handler.fail = null
 export default handler
